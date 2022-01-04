@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>Servlet</servlet-name>
+        <servlet-class>Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet</servlet-name>
+        <url-pattern>/helloClass</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetCoockiServlet</servlet-name>
+        <servlet-class>GetCoockiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetCoockiServlet</servlet-name>
+        <url-pattern>/getCoockie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SetCoockiServlet</servlet-name>
+        <servlet-class>SetCoockiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SetCoockiServlet</servlet-name>
+        <url-pattern>/setCoockie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteCoockiServlet</servlet-name>
+        <servlet-class>DeleteCoockiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteCoockiServlet</servlet-name>
+        <url-pattern>/delCoockie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PostgresqlServlet</servlet-name>
+        <servlet-class>PostgresqlServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PostgresqlServlet</servlet-name>
+        <url-pattern>/dataBase</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>first</servlet-name>
+        <jsp-file>/first.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>first</servlet-name>
+        <url-pattern>/helloJsp</url-pattern>
+    </servlet-mapping>
+
+
+
+</web-app>

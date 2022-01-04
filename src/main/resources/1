@@ -1,0 +1,43 @@
+
+        //для идентификации и сохранения пользователя используюся сессии
+        HttpSession session = request.getSession();
+        Integer count = (Integer) session.getAttribute("count");  //получаем атрибут для идентификации пользователя
+        //если клиент первый раз на сервере то назначим ему в счетчик 1
+        if(count==null){
+            session.setAttribute("count",1);        //устанавливаем в атрибут значение
+            count=1;
+        }else session.setAttribute("count",count+1);
+
+
+
+
+        // запрос клиента по параметру
+        // в адресной строке обычно идет ?имя=параметр&имя =параметр.   Параметры передаются в виде ключ=значение. например :
+        String name = request.getParameter("name");  //если клиент передас в адресной строке ?name= Bob (http://localhost:8080/helloClass?name=Bob), то мы этот параметр выведем в респонсе ниже
+
+        // ответ на страницу
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter pw = response.getWriter();
+        pw.println("<html>");
+        pw.println("<head><title>Hello World</title></title>");
+        pw.println("<body>");
+        pw.println("<h1>Это Сервлет "+ count+ "</h1>");
+        pw.println("</body></html>");
+
+        /*
+          Редирект  это когда идет запрос от клиента на сервер и
+          сервер возвращает ответ например с другим адресом.
+          Дальше у клиента делается повторно запрос но уже на тот адрес который ему отдал сервер.
+          При этом если у нас есть какойто контент то его не будет видно.Также можно сделать редирект на файл jsp
+          Пример ниже :клиент ввел http://localhost:8080/helloClass и мы его перенаправили на гугл
+         */
+//        response.sendRedirect("/first.jsp");
+//        response.sendRedirect("https://www.google.com");
+
+        /*Форвард это как редирект но нельзя делать на сторонние сайты. можно только внутри сервера
+        */
+
+//        RequestDispatcher dispatcher =request.getRequestDispatcher("/first.jsp");
+//        dispatcher.forward(request,response);
+
+    }
